@@ -1,4 +1,6 @@
-# Pixyll
+# Venture Unknown
+
+Resources for startups focused on infrastructure and scalable systems.
 
 [pixyll.com](http://www.pixyll.com)
 

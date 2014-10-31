@@ -1,4 +1,7 @@
-Copyright (c) 2014 John Otander
+Copyright (c) 2014 Joe Johnston, John Albietz
+
+Pixyll theme Copyright (c) 2014 John Otander
+https://github.com/johnotander/pixyll
 
 MIT License
 

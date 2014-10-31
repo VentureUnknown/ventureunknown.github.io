@@ -1,18 +1,18 @@
 # Site settings
-title:       Pixyll
-email:       your_email@example.com
-author:      John Otander
-description: "A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff."
+title:       Venture Unknown
+email:       joe@ventureunknown.com
+author:      Venture Unknown
+description: "Infrastructure and scaling resources for startups."
 baseurl:     ""
-url:         "http://pixyll.com"
+url:         "http://www.ventureunknown.com"
 
 # Google analytics
 google_analytics:
 
 # Optional features
-animated:           false
-show_related_posts: false
-show_post_footers:  false
+animated:           true
+show_related_posts: true
+show_post_footers:  true
 
 # Social icons
 show_social_icons: false
@@ -27,6 +27,6 @@ flattr_button:
 # Build settings
 markdown:     kramdown
 permalink:    pretty
-paginate:     3
+paginate:     10
 sass:
   compressed: true
