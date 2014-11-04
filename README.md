@@ -2,6 +2,29 @@
 
 Resources for startups focused on infrastructure and scalable systems.
 
+
+# Install
+
+```bash
+git clone git@github.com:VentureUnknown/ventureunknown.github.io.git
+cd ventureunknown.github.io
+bundle install
+
+# Run locally
+bundle exec jekyll serve
+
+# Run and watch for file changes
+bundle exec jekyll serve --watch
+```
+
+
+
+
+---
+
+
+# Theme
+
 [pixyll.com](http://www.pixyll.com)
 
 ![Pixyll screenshot](https://cloud.githubusercontent.com/assets/1424573/3847467/134aa236-1e66-11e4-8421-4e8c122118dc.png)
