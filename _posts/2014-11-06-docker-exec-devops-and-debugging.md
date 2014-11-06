@@ -33,25 +33,30 @@ Removing SSH also significantly reduces the complexity of having to manage keys 
 
 ##### So how to debug in this brave new SSH-less world?
 
-First, a quick helper alias to allow us to quickly find the id of a running container:
-
-{% highlight bash %}
-alias docker-id='docker inspect --format="{{ .Id }}"'
-{% endhighlight %}
-
-And then when I want to debug the application, I can simply run:
-
-{% highlight bash %}
-docker exec -it $(docker-id my-webapp) /bin/bash
-{% endhighlight %}
-
-Or, to quickly debug the last-launched container:
+Run this to quickly debug the last-launched container:
 
 {% highlight bash %}
 docker exec -it `docker ps -q -l` /bin/bash
 {% endhighlight %}
 
-And I'm in my container, able to debug as expected. 
+##### And I'm in my container, able to debug as expected. 
 
-I'm planning to do additional testing to see if docker exec opens up other possibilities for streamlining our workflow and reducing the complexity of our running containers. But so far I've integrated it into my workflow and it's been a definite win.
+There's another way I use that first requires adding a helper alias to allow us to quickly find the id of a running container:
 
+{% highlight bash %}
+alias docker-id='docker inspect --format="{{ .Id }}"'
+{% endhighlight %}
+
+With this alias, you can then retrieve the id of a named container:
+
+{% highlight bash %}
+docker-id my-railsapp
+{% endhighlight %}
+
+To do all at once, I can simply run:
+
+{% highlight bash %}
+docker exec -it `docker-id my-railsapp` /bin/bash
+{% endhighlight %}
+
+That's all for now. I'm planning to do additional testing to see if `docker exec` opens up other possibilities for streamlining our workflow and reducing the complexity of our running containers. But so far I've integrated it into my workflow and it's been a definite win. Comments / feedback or [corrections via github pull request](https://github.com/VentureUnknown/ventureunknown.github.io/blob/master/_posts/2014-11-06-docker-exec-devops-and-debugging.md) are always welcome.
