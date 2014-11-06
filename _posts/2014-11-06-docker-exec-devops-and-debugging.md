@@ -2,7 +2,7 @@
 layout:     post
 title:      Docker Exec: Sane Docker Debugging without SSH
 date:       2014-11-06 09:00:00
-summary:    Docker exec enables docker debugging during development or production without SSH or other hacks.
+summary:    No more hacks. Finally an official way to debug docker during development or production.
 categories: infrastructure docker debugging
 ---
 
