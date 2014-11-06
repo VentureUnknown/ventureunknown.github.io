@@ -6,7 +6,9 @@ summary:    No more hacks. Finally an official way to debug docker during develo
 categories: infrastructure docker debugging
 ---
 
-The new [Docker Exec](https://docs.docker.com/reference/commandline/cli/#exec) command (available in Docker version 1.3+) allows users to run any command in any running container. These commands can either run in the background, or in the foreground. The canonical example given is to run bash in a container to do debugging. For example, this week I was working on a container and debugging with a run command like this:
+The new [Docker Exec](https://docs.docker.com/reference/commandline/cli/#exec) command (available in Docker version 1.3+) allows users to run any command in any running container. These commands can either run in the background, or in the foreground. The canonical example given is to run bash in a container to do debugging. 
+
+To give a real example, this week I was refactoring a container and saw that my scripted debug command looked like this:
 
 {% highlight bash %}
 docker run -p 127.0.0.1:2200:22 -p 80:80 \
@@ -15,7 +17,7 @@ docker run -p 127.0.0.1:2200:22 -p 80:80 \
   /etc/runit/2 syslog
 {% endhighlight %}
 
-As you'll notice, I have [runit](http://smarden.org/runit/) running within this container to start up the multiple services that this application needs. And I've included a tiny ssh server (dropbear in this example) to allow administrators and users to have an easy way to inspect the container as needed during runtime.
+As you'll notice, I had [runit](http://smarden.org/runit/) running within this container to start up the multiple services that this particular monolithic application needs (apache/mysql). And I had a tiny ssh server also started (dropbear in this example) to allow administrators and users to have an easy way to inspect the container as needed during runtime.
 
 The new `docker exec` command would allow me to run the container like this:
 
@@ -51,4 +53,5 @@ docker exec -it `docker ps -q -l` /bin/bash
 
 And I'm in my container, able to debug as expected. 
 
-I'm planning to do additional testing to see if docker exec opens up other possibilities for streamlining our workflow and reducing the complexity of our running containers.
+I'm planning to do additional testing to see if docker exec opens up other possibilities for streamlining our workflow and reducing the complexity of our running containers. But so far I've integrated it into my workflow and it's been a definite win.
+
