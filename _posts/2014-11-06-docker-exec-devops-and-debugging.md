@@ -6,7 +6,7 @@ summary:    No more hacks. Finally an official way to debug docker during develo
 categories: infrastructure docker debugging
 ---
 
-The new [Docker Exec](https://docs.docker.com/reference/commandline/cli/#exec) command (available in Docker version 1.3+) allows users to run any command in any running container. These commands can either run in the background, or in the foreground. The canonical example given is to run bash in a container to do debugging. For example, this week I was working on a container for a client that had a run command like this:
+The new [Docker Exec](https://docs.docker.com/reference/commandline/cli/#exec) command (available in Docker version 1.3+) allows users to run any command in any running container. These commands can either run in the background, or in the foreground. The canonical example given is to run bash in a container to do debugging. For example, this week I was working on a container and debugging with a run command like this:
 
 {% highlight bash %}
 docker run -p 127.0.0.1:2200:22 -p 80:80 \
